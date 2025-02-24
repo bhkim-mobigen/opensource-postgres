@@ -1,4 +1,307 @@
+-- public.classification_id_seq definition
 
+-- DROP SEQUENCE public.classification_id_seq;
+
+CREATE SEQUENCE public.classification_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.diagram_node_info_key definition
+
+-- DROP SEQUENCE public.diagram_node_info_key;
+
+CREATE SEQUENCE public.diagram_node_info_key
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.diagram_node_link_key definition
+
+-- DROP SEQUENCE public.diagram_node_link_key;
+
+CREATE SEQUENCE public.diagram_node_link_key
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.menu_manage_id_seq definition
+
+-- DROP SEQUENCE public.menu_manage_id_seq;
+
+CREATE SEQUENCE public.menu_manage_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.post_answer_id_seq definition
+
+-- DROP SEQUENCE public.post_answer_id_seq;
+
+CREATE SEQUENCE public.post_answer_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.post_id_seq definition
+
+-- DROP SEQUENCE public.post_id_seq;
+
+CREATE SEQUENCE public.post_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.review_seq definition
+
+-- DROP SEQUENCE public.review_seq;
+
+CREATE SEQUENCE public.review_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.seq_event_log definition
+
+-- DROP SEQUENCE public.seq_event_log;
+
+CREATE SEQUENCE public.seq_event_log
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_account_history_id_seq definition
+
+-- DROP SEQUENCE public.tb_account_history_id_seq;
+
+CREATE SEQUENCE public.tb_account_history_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_code_id_seq definition
+
+-- DROP SEQUENCE public.tb_code_id_seq;
+
+CREATE SEQUENCE public.tb_code_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_data_request_answer_id_seq definition
+
+-- DROP SEQUENCE public.tb_data_request_answer_id_seq;
+
+CREATE SEQUENCE public.tb_data_request_answer_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_data_request_id_seq definition
+
+-- DROP SEQUENCE public.tb_data_request_id_seq;
+
+CREATE SEQUENCE public.tb_data_request_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_data_user_description_favorite_id_seq definition
+
+-- DROP SEQUENCE public.tb_data_user_description_favorite_id_seq;
+
+CREATE SEQUENCE public.tb_data_user_description_favorite_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_data_user_description_id_seq definition
+
+-- DROP SEQUENCE public.tb_data_user_description_id_seq;
+
+CREATE SEQUENCE public.tb_data_user_description_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_download_extract_seq definition
+
+-- DROP SEQUENCE public.tb_download_extract_seq;
+
+CREATE SEQUENCE public.tb_download_extract_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_download_history_download_id_seq definition
+
+-- DROP SEQUENCE public.tb_download_history_download_id_seq;
+
+CREATE SEQUENCE public.tb_download_history_download_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_external_data_id definition
+
+-- DROP SEQUENCE public.tb_external_data_id;
+
+CREATE SEQUENCE public.tb_external_data_id
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_file_id_seq definition
+
+-- DROP SEQUENCE public.tb_file_id_seq;
+
+CREATE SEQUENCE public.tb_file_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_menu_history_id_seq definition
+
+-- DROP SEQUENCE public.tb_menu_history_id_seq;
+
+CREATE SEQUENCE public.tb_menu_history_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_p2_data_extract_mng_pk definition
+
+-- DROP SEQUENCE public.tb_p2_data_extract_mng_pk;
+
+CREATE SEQUENCE public.tb_p2_data_extract_mng_pk
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_p2_sym_dict_temp2_id_seq definition
+
+-- DROP SEQUENCE public.tb_p2_sym_dict_temp2_id_seq;
+
+CREATE SEQUENCE public.tb_p2_sym_dict_temp2_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_portal_config_id_seq definition
+
+-- DROP SEQUENCE public.tb_portal_config_id_seq;
+
+CREATE SEQUENCE public.tb_portal_config_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_role_dept_seq definition
+
+-- DROP SEQUENCE public.tb_role_dept_seq;
+
+CREATE SEQUENCE public.tb_role_dept_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_role_dept_seq_seq definition
+
+-- DROP SEQUENCE public.tb_role_dept_seq_seq;
+
+CREATE SEQUENCE public.tb_role_dept_seq_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_role_meta_seq definition
+
+-- DROP SEQUENCE public.tb_role_meta_seq;
+
+CREATE SEQUENCE public.tb_role_meta_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_role_meta_seq_seq definition
+
+-- DROP SEQUENCE public.tb_role_meta_seq_seq;
+
+CREATE SEQUENCE public.tb_role_meta_seq_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_role_user_seq definition
+
+-- DROP SEQUENCE public.tb_role_user_seq;
+
+CREATE SEQUENCE public.tb_role_user_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_role_user_seq_seq definition
+
+-- DROP SEQUENCE public.tb_role_user_seq_seq;
+
+CREATE SEQUENCE public.tb_role_user_seq_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_search_meta_history_search_meta_id_seq definition
+
+-- DROP SEQUENCE public.tb_search_meta_history_search_meta_id_seq;
+
+CREATE SEQUENCE public.tb_search_meta_history_search_meta_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_search_text_history_id_seq definition
+
+-- DROP SEQUENCE public.tb_search_text_history_id_seq;
+
+CREATE SEQUENCE public.tb_search_text_history_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_share_id_seq definition
+
+-- DROP SEQUENCE public.tb_share_id_seq;
+
+CREATE SEQUENCE public.tb_share_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_synonyms_id_seq definition
+
+-- DROP SEQUENCE public.tb_synonyms_id_seq;
+
+CREATE SEQUENCE public.tb_synonyms_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_synonyms_req_id_seq definition
+
+-- DROP SEQUENCE public.tb_synonyms_req_id_seq;
+
+CREATE SEQUENCE public.tb_synonyms_req_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
+
+
+-- public.tb_synonyms_req_item_id_seq definition
+
+-- DROP SEQUENCE public.tb_synonyms_req_item_id_seq;
+
+CREATE SEQUENCE public.tb_synonyms_req_item_id_seq
+	NO MINVALUE
+	NO MAXVALUE;
 
 CREATE TABLE public.tb_account (
 	user_id varchar(50) NOT NULL, -- 사용자 ID
@@ -1930,3 +2233,13 @@ INSERT INTO public.tb_mail_templates (template_id, template_title, template_cont
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ALTER TABLE tb_role_dept ADD CONSTRAINT fk_tb_role_dept_01 FOREIGN KEY (role_id) REFERENCES tb_role (role_id);
+ALTER TABLE tb_role_dept ADD CONSTRAINT fk_tb_role_dept_02 FOREIGN KEY (dept_id) REFERENCES tb_account_dept (dept_id);
+ALTER TABLE tb_role_user ADD CONSTRAINT fk_tb_role_user_01 FOREIGN KEY (user_id) REFERENCES tb_account (user_id);
+ALTER TABLE tb_role_user ADD CONSTRAINT fk_tb_role_user_02 FOREIGN KEY (role_id) REFERENCES tb_role (role_id);
+ALTER TABLE tb_role_meta ADD CONSTRAINT fk_tb_role_meta_01 FOREIGN KEY (meta_id) REFERENCES tb_meta_data (meta_id);
+ALTER TABLE tb_role_meta ADD CONSTRAINT fk_tb_role_meta_02 FOREIGN KEY (role_id) REFERENCES tb_role (role_id);
+ALTER TABLE tb_role_auth ADD CONSTRAINT fk_tb_role_auth_01 FOREIGN KEY (role_id) REFERENCES tb_role (role_id);
+ALTER TABLE tb_classification_info ADD CONSTRAINT fk_tb_classification_info_01 FOREIGN KEY (dept_id) REFERENCES tb_account_dept (dept_id);
+ALTER TABLE tb_account ADD CONSTRAINT fk_tb_account_01 FOREIGN KEY (dept_id) REFERENCES tb_account_dept (dept_id);
