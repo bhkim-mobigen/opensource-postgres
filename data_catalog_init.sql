@@ -2243,3 +2243,22 @@ ALTER TABLE tb_role_meta ADD CONSTRAINT fk_tb_role_meta_02 FOREIGN KEY (role_id)
 ALTER TABLE tb_role_auth ADD CONSTRAINT fk_tb_role_auth_01 FOREIGN KEY (role_id) REFERENCES tb_role (role_id);
 ALTER TABLE tb_classification_info ADD CONSTRAINT fk_tb_classification_info_01 FOREIGN KEY (dept_id) REFERENCES tb_account_dept (dept_id);
 ALTER TABLE tb_account ADD CONSTRAINT fk_tb_account_01 FOREIGN KEY (dept_id) REFERENCES tb_account_dept (dept_id);
+
+
+-- public.vw_account_master source
+
+CREATE OR REPLACE VIEW public.vw_account_master
+AS SELECT ta.user_id,
+    ta.user_name AS user_nm,
+    ta.dept_id AS dept_cd,
+    ta.email AS user_email,
+    tad.dept_name AS dept_nm,
+    ''::text AS jw_nm,
+    ta.user_name,
+    ta.dept_id,
+    ta.email,
+    tad.dept_name
+   FROM tb_account ta
+     LEFT JOIN tb_account_dept tad ON ta.dept_id::text = tad.dept_id::text;
+
+COMMENT ON VIEW public.vw_account_master IS '사용자 계정 테이블 VIEW';
