@@ -19,7 +19,7 @@ COPY ../*.rpm /postgres-installer
 #postgres install
 RUN cd /postgres-installer
 RUN dnf -qy module disable postgresql
-RUN dnf install -y *.rpm
+RUN dnf install -y /postgres-installer/*.rpm
 
 RUN mkdir -p /var/lib/pgsql/data
 RUN chown postgres:postgres /var/lib/pgsql
