@@ -32,7 +32,6 @@ RUN chown postgres:postgres /var/lib/pgsql
 
 ##create sudo
 RUN groupadd -r sudo || true
-RUN useradd postgres
 RUN usermod -aG sudo postgres && echo "postgres ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 ##create default config
