@@ -3,6 +3,7 @@ FROM rockylinux:8.9
 # ps 설치
 RUN dnf -y install procps-ng
 RUN dnf -y install sudo
+RUN dnf install -y glibc-langpack-ko glibc-all-langpacks
 
 #timezone 설정
 RUN ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime && dnf install -y tzdata && dnf clean all
