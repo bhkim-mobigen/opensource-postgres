@@ -39,8 +39,10 @@ RUN mkdir -p /defaultfile
 COPY pg_hba.conf /defaultfile
 COPY postgresql.conf /defaultfile
 COPY data_catalog_init.sql /defaultfile
+COPY entrypoint.sh /
 
 RUN chown -R postgres:postgres /defaultfile
+RUN chmod 755 /defaultfile/*.sh
 
 USER postgres
 
