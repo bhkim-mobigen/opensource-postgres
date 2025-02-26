@@ -7,14 +7,33 @@ RUN dnf -y update && \
     unzip \
     && dnf clean all
 
-#Postgres Download
-RUN dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+ENV PG_MAJOR=14 \
+    PG_VERSION=14.17 \
+    PGDATA=/var/lib/pgsql/data
+
+
+##move installer
+RUN mkdir -p /postgres-installer
+COPY ../*.rpm /postgres-installer
+
+#postgres install
+RUN cd /postgres-installer
 RUN dnf -qy module disable postgresql
-RUN dnf install -y postgresql14-server
+RUN dnf install -y *.rpm
 
-#RUN /usr/pgsql-14/bin/postgresql-14-setup initdb
+RUN mkdir -p /var/lib/pgsql/data
+RUN chown postgres:postgres /var/lib/pgsql
 
-# RUN su - postgres
+USER postgres
+
+##create default config
+RUN mkdir -p /defaultfile
+COPY pg_hba.conf /defaultfile
+COPY postgresql.conf /defaultfile
+COPY data_catalog_init.sql /defaultfile
+
+#port
+EXPOSE 5432
 
 CMD ["tail", "-f", "/dev/null"]
 
@@ -44,25 +63,3 @@ CMD ["tail", "-f", "/dev/null"]
 # systemctl restart postgresql-14
 # psql -U rotem -d rotem
 #
-
-
-#
-#
-#
-# COPY ../mc /usr/local/bin/mc
-# COPY entrypoint.sh /entrypoint.sh
-#
-# # set auth
-# RUN chmod +x /usr/local/bin/minio
-# RUN chmod +x /usr/local/bin/mc
-# RUN chmod +x /entrypoint.sh
-#
-# # Expose port 9000 for MinIO web UI
-# EXPOSE 5432
-#
-# # Create a directory to store MinIO data
-# RUN mkdir -p /data
-
-# Set MinIO entrypoint
-# ENTRYPOINT ["/usr/local/bin/minio"]
-

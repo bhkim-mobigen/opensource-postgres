@@ -9,6 +9,6 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - $DATA_CATALOG_SOLUTION_DATA/pgsql:/var/lib/pgsql
-    #command: ["sh", "-c", "set -e;/entrypoint.sh"]
-    command: ["tail", "-f", "/dev/null"]
+      - $DATA_CATALOG_SOLUTION_DATA/postgres/data:/var/lib/pgsql/data
+    command: ["sh", "-c", "set -e;/entrypoint.sh"]
+
