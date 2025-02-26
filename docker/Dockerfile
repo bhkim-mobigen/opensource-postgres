@@ -26,7 +26,7 @@ RUN cd /postgres-installer
 RUN dnf -qy module disable postgresql
 RUN dnf install -y /postgres-installer/*.rpm
 
-RUN chown postgres:postgres /var/lib/pgsql
+RUN chown -R postgres:postgres /var/lib/pgsql
 
 ##create sudo
 RUN groupadd -r sudo || true

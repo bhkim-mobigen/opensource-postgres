@@ -1,1 +1,0 @@
-pg_dump -U postgres -h localhost -p 5432 -d data_catalog -F p -f data_catalog.sql
