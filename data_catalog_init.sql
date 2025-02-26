@@ -2234,17 +2234,6 @@ INSERT INTO public.tb_mail_templates (template_id, template_title, template_cont
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-ALTER TABLE tb_role_dept ADD CONSTRAINT fk_tb_role_dept_01 FOREIGN KEY (role_id) REFERENCES tb_role (role_id);
-ALTER TABLE tb_role_dept ADD CONSTRAINT fk_tb_role_dept_02 FOREIGN KEY (dept_id) REFERENCES tb_account_dept (dept_id);
-ALTER TABLE tb_role_user ADD CONSTRAINT fk_tb_role_user_01 FOREIGN KEY (user_id) REFERENCES tb_account (user_id);
-ALTER TABLE tb_role_user ADD CONSTRAINT fk_tb_role_user_02 FOREIGN KEY (role_id) REFERENCES tb_role (role_id);
-ALTER TABLE tb_role_meta ADD CONSTRAINT fk_tb_role_meta_01 FOREIGN KEY (meta_id) REFERENCES tb_meta_data (meta_id);
-ALTER TABLE tb_role_meta ADD CONSTRAINT fk_tb_role_meta_02 FOREIGN KEY (role_id) REFERENCES tb_role (role_id);
-ALTER TABLE tb_role_auth ADD CONSTRAINT fk_tb_role_auth_01 FOREIGN KEY (role_id) REFERENCES tb_role (role_id);
-ALTER TABLE tb_classification_info ADD CONSTRAINT fk_tb_classification_info_01 FOREIGN KEY (dept_id) REFERENCES tb_account_dept (dept_id);
-ALTER TABLE tb_account ADD CONSTRAINT fk_tb_account_01 FOREIGN KEY (dept_id) REFERENCES tb_account_dept (dept_id);
-
-
 -- public.vw_account_master source
 
 CREATE OR REPLACE VIEW public.vw_account_master
@@ -2258,7 +2247,7 @@ AS SELECT ta.user_id,
     ta.dept_id,
     ta.email,
     tad.dept_name
-   FROM tb_account ta
-     LEFT JOIN tb_account_dept tad ON ta.dept_id::text = tad.dept_id::text;
+   FROM public.tb_account ta
+     LEFT JOIN public.tb_account_dept tad ON ta.dept_id::text = tad.dept_id::text;
 
 COMMENT ON VIEW public.vw_account_master IS '사용자 계정 테이블 VIEW';
