@@ -42,7 +42,7 @@ COPY data_catalog_init.sql /defaultfile
 COPY entrypoint.sh /
 
 RUN chown -R postgres:postgres /defaultfile
-RUN chmod 755 /defaultfile/*.sh
+RUN chmod 755 /entrypoint.sh
 
 USER postgres
 
