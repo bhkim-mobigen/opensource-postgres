@@ -14,7 +14,7 @@ WORKDIR /
 #postgres 설정
 ENV PG_MAJOR=14 \
     PG_VERSION=14.17 \
-    PGDATA=/var/lib/pgsql/data
+    PGDATA=/var/lib/pgsql/14/data
 
 
 ##move installer
@@ -26,9 +26,7 @@ RUN cd /postgres-installer
 RUN dnf -qy module disable postgresql
 RUN dnf install -y /postgres-installer/*.rpm
 
-RUN mkdir -p /var/lib/pgsql/data
 RUN chown postgres:postgres /var/lib/pgsql
-
 
 ##create sudo
 RUN groupadd -r sudo || true
