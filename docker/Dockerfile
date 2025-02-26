@@ -1,12 +1,17 @@
 FROM rockylinux:8.9
 
-# Install dependencies
-RUN dnf -y update && \
-    dnf -y install \
-    wget \
-    unzip \
-    && dnf clean all
+# ps 설치
+RUN dnf -y install procps-ng
+RUN dnf -y install sudo
 
+#timezone 설정
+RUN ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime && dnf install -y tzdata && dnf clean all
+ENV TZ=Asia/Seoul
+
+#초기 경로 지정
+WORKDIR /
+
+#postgres 설정
 ENV PG_MAJOR=14 \
     PG_VERSION=14.17 \
     PGDATA=/var/lib/pgsql/data
@@ -24,13 +29,22 @@ RUN dnf install -y /postgres-installer/*.rpm
 RUN mkdir -p /var/lib/pgsql/data
 RUN chown postgres:postgres /var/lib/pgsql
 
-USER postgres
+
+##create sudo
+RUN groupadd -r sudo || true
+RUN useradd postgres
+RUN usermod -aG sudo postgres && echo "postgres ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 ##create default config
 RUN mkdir -p /defaultfile
 COPY pg_hba.conf /defaultfile
 COPY postgresql.conf /defaultfile
 COPY data_catalog_init.sql /defaultfile
+
+RUN chown -R postgres:postgres /defaultfile
+
+USER postgres
+
 
 #port
 EXPOSE 5432
