@@ -2233,6 +2233,46 @@ INSERT INTO public.tb_mail_templates (template_id, template_title, template_cont
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- synonym
+
+INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES
+('인공지능', 'AI', 'admin', NULL, NULL),
+('분석', 'analysis', 'admin', NULL, NULL),
+('비용', 'cost', 'admin', NULL, NULL),
+('비용', '원가', 'admin', NULL, NULL),
+('공장', 'factory', 'admin', NULL, NULL),
+('자동화', 'automation', 'admin', NULL, NULL),
+('자동화', '자동', 'admin', NULL, NULL),
+('공정', 'fair', 'admin', NULL, NULL),
+('무역', 'trade', 'admin', NULL, NULL),
+('능력', 'capability', 'admin', NULL, NULL),
+('능력', 'capa', 'admin', NULL, NULL),
+('관세', 'duty', 'admin', NULL, NULL),
+('관세', 'customs', 'admin', NULL, NULL),
+('구매자', 'buyer', 'admin', NULL, NULL),
+('기간', 'duration', 'admin', NULL, NULL),
+('도구', 'tool', 'admin', NULL, NULL),
+('범위', 'scope', 'admin', NULL, NULL),
+('산업', 'industrial', 'admin', NULL, NULL),
+('공학', 'engineering', 'admin', NULL, NULL),
+('서비스', 'service', 'admin', NULL, NULL),
+('성과', 'performance', 'admin', NULL, NULL),
+('소프트웨어', 'sw', 'admin', NULL, NULL),
+('소프트웨어', 'software', 'admin', NULL, NULL),
+('시스템', 'system', 'admin', NULL, NULL),
+('요구사항', 'requirement', 'admin', NULL, NULL),
+('확증', 'validation', 'admin', NULL, NULL),
+('네트워크', 'network', 'admin', NULL, NULL),
+('품질', 'quality', 'admin', NULL, NULL),
+('날짜', 'day', 'admin', NULL, NULL),
+('평균', 'mean', 'admin', NULL, NULL),
+('평균', 'average', 'admin', NULL, NULL),
+('수출', 'export', 'admin', NULL, NULL),
+('수입', 'import', 'admin', NULL, NULL),
+('신뢰도', 'reliability', 'admin', NULL, NULL),
+('보고서', 'report', 'admin', NULL, NULL),
+('적합성', 'Compatibility', 'admin', NULL, NULL);
+
 
 -- public.vw_account_master source
 
