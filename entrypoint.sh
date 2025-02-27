@@ -2,7 +2,7 @@
 
 #RUN
 
-if [ ! "$(ls -A /var/lib/pgsql/data)" ]; then
+if [ ! "$(ls -A /var/lib/pgsql/14/data)" ]; then
   sudo chown -R postgres:postgres /var/lib/pgsql/14/data
   /usr/pgsql-14/bin/initdb
   sudo cp /defaultfile/*.conf /var/lib/pgsql/14/data
