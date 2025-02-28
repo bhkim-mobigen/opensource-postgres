@@ -10,5 +10,6 @@ services:
       - "5432:5432"
     volumes:
       - $DATA_CATALOG_SOLUTION_DATA/postgres/data:/var/lib/pgsql/14/data
+      - /etc/hosts:/etc/hosts
     command: ["sh", "-c", "set -e;/entrypoint.sh"]
 
