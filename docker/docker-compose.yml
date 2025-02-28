@@ -11,5 +11,6 @@ services:
     volumes:
       - $DATA_CATALOG_SOLUTION_DATA/postgres/data:/var/lib/pgsql/14/data
       - /etc/hosts:/etc/hosts
+    working_dir: /var/lib/pgsql/14/data
     command: ["sh", "-c", "set -e;/entrypoint.sh"]
 
