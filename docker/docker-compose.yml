@@ -5,7 +5,7 @@ services:
       context: ../
       dockerfile: docker/Dockerfile
     container_name: postgres
-    image: data-catalog-postgres:0.1
+    image: data-catalog-postgres:$IMG_VERSION
     ports:
       - "5432:5432"
     volumes:
