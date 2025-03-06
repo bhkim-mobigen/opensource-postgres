@@ -10,7 +10,7 @@ if [ ! "$(ls -A /var/lib/pgsql/14/data)" ]; then
   /usr/pgsql-14/bin/postmaster -D /var/lib/pgsql/14/data &
   sleep 30
   psql -U postgres -p 5432 -c "CREATE USER data_catalog PASSWORD 'data_catalog123' SUPERUSER; "
-  psql -U postgres -p 5432 -c "CREATE DATABASE data_catalog;"
+  psql -U postgres -p 5432 -c "CREATE DATABASE data_catalog ENCODING 'UTF8' LC_COLLATE = 'en_US.UTF-8' LC_CTYPE = 'en_US.UTF-8';"
   psql -U postgres -p 5432 -c "CREATE DATABASE airflow;"
   psql -U postgres -p 5432 -d data_catalog -f /defaultfile/data_catalog_init.sql
 else
