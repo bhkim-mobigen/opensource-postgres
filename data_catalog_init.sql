@@ -1728,6 +1728,158 @@ COMMENT ON COLUMN public.tb_tag_info.reg_user IS '등록자';
 COMMENT ON COLUMN public.tb_tag_info.reg_date IS '등록일';
 
 
+-- public.tb_standard_term definition
+
+-- Drop table
+
+-- DROP TABLE public.tb_standard_term;
+
+CREATE TABLE public.tb_standard_term (
+	id uuid NOT NULL, -- 용어 ID
+	"name" varchar NOT NULL, -- 용어명
+	english_sign varchar NOT NULL, -- 영문약어명
+	description varchar NOT NULL, -- 공통표준용어 설명
+	"domain" varchar NULL, -- 도메인명
+	permission_value varchar NULL, -- 허용값
+	save_format varchar NULL, -- 저장형식
+	expression_format varchar NULL, -- 표현형식
+	admin_standard_code_name varchar NULL, -- 행정표준코드명
+	competent_authority varchar NULL, -- 소관기관명
+	used varchar NULL, -- 사용여부(Y,N)
+	final_version_date varchar NULL, -- 최종버전일
+	created_date timestamptz NULL, -- 생성일
+	modified_date timestamptz NULL, -- 수정일
+	creator varchar NULL, -- 생성자
+	modifier varchar NULL, -- 수정자
+	synonym varchar NULL, -- 이음동의어
+	english_name varchar NULL, -- 단어명(영문)
+	CONSTRAINT tb_standard_term_pkey PRIMARY KEY (id)
+);
+
+-- Column comments
+
+COMMENT ON COLUMN public.tb_standard_term.id IS '용어 ID';
+COMMENT ON COLUMN public.tb_standard_term."name" IS '용어명';
+COMMENT ON COLUMN public.tb_standard_term.english_sign IS '영문약어명';
+COMMENT ON COLUMN public.tb_standard_term.description IS '공통표준용어 설명';
+COMMENT ON COLUMN public.tb_standard_term."domain" IS '도메인명';
+COMMENT ON COLUMN public.tb_standard_term.permission_value IS '허용값';
+COMMENT ON COLUMN public.tb_standard_term.save_format IS '저장형식';
+COMMENT ON COLUMN public.tb_standard_term.expression_format IS '표현형식';
+COMMENT ON COLUMN public.tb_standard_term.admin_standard_code_name IS '행정표준코드명';
+COMMENT ON COLUMN public.tb_standard_term.competent_authority IS '소관기관명';
+COMMENT ON COLUMN public.tb_standard_term.used IS '사용여부(Y,N)';
+COMMENT ON COLUMN public.tb_standard_term.final_version_date IS '최종버전일';
+COMMENT ON COLUMN public.tb_standard_term.created_date IS '생성일';
+COMMENT ON COLUMN public.tb_standard_term.modified_date IS '수정일';
+COMMENT ON COLUMN public.tb_standard_term.creator IS '생성자';
+COMMENT ON COLUMN public.tb_standard_term.modifier IS '수정자';
+COMMENT ON COLUMN public.tb_standard_term.synonym IS '이음동의어';
+COMMENT ON COLUMN public.tb_standard_term.english_name IS '단어명(영문)';
+
+-- Permissions
+
+ALTER TABLE public.tb_standard_term OWNER TO data_catalog;
+
+
+-- public.tb_standard_word definition
+
+-- Drop table
+
+-- DROP TABLE public.tb_standard_word;
+
+CREATE TABLE public.tb_standard_word (
+	id uuid NOT NULL, -- 단어 ID
+	"name" varchar NOT NULL, -- 단어명
+	english_sign varchar NOT NULL, -- 영문약어명
+	word_eng varchar NOT NULL, -- 단어영문명
+	description varchar NOT NULL, -- 단어설명
+	form_checked varchar NULL, -- 형식단어여부(Y,N)
+	domain_classified_name varchar NULL, -- 도메인 분류명
+	synonym varchar NULL, -- 이음동의어목록
+	forbidden varchar NULL, -- 금칙어목록
+	used varchar NULL, -- 사용여부(Y,N)
+	final_version_date varchar NULL, -- 최종버전일
+	created_date timestamptz NULL, -- 생성일
+	modified_date timestamptz NULL, -- 수정일
+	creator varchar NULL, -- 생성자
+	modifier varchar NULL,
+	CONSTRAINT tb_standard_word_pkey PRIMARY KEY (id)
+);
+
+-- Column comments
+
+COMMENT ON COLUMN public.tb_standard_word.id IS '단어 ID';
+COMMENT ON COLUMN public.tb_standard_word."name" IS '단어명';
+COMMENT ON COLUMN public.tb_standard_word.english_sign IS '영문약어명';
+COMMENT ON COLUMN public.tb_standard_word.word_eng IS '단어영문명';
+COMMENT ON COLUMN public.tb_standard_word.description IS '단어설명';
+COMMENT ON COLUMN public.tb_standard_word.form_checked IS '형식단어여부(Y,N)';
+COMMENT ON COLUMN public.tb_standard_word.domain_classified_name IS '도메인 분류명';
+COMMENT ON COLUMN public.tb_standard_word.synonym IS '이음동의어목록';
+COMMENT ON COLUMN public.tb_standard_word.forbidden IS '금칙어목록';
+COMMENT ON COLUMN public.tb_standard_word.used IS '사용여부(Y,N)';
+COMMENT ON COLUMN public.tb_standard_word.final_version_date IS '최종버전일';
+COMMENT ON COLUMN public.tb_standard_word.created_date IS '생성일';
+COMMENT ON COLUMN public.tb_standard_word.modified_date IS '수정일';
+COMMENT ON COLUMN public.tb_standard_word.creator IS '생성자';
+
+-- Permissions
+
+ALTER TABLE public.tb_standard_word OWNER TO data_catalog;
+
+
+-- public.tb_standard_domain definition
+
+-- Drop table
+
+-- DROP TABLE public.tb_standard_domain;
+
+CREATE TABLE public.tb_standard_domain (
+	id uuid NOT NULL, -- 도메인 UUID
+	"name" varchar NOT NULL, -- 도메인 명
+	group_name varchar NULL, -- 도메인 그룹명
+	domain_classified_name varchar NULL, -- 도메인 분류명
+	description varchar NOT NULL, -- 도메인 설명
+	data_type varchar NULL, -- 데이터 타입
+	data_size int8 NULL, -- 데이터 길이
+	decimal_point_size int8 NULL, -- 소수점 길이
+	save_format varchar NULL, -- 저장형식
+	expression_format varchar NULL, -- 표현형식
+	unit varchar NULL, -- 단위
+	permission_value varchar NULL, -- 허용값
+	used varchar NULL, -- 사용여부(Y,N)
+	final_version_date varchar NULL, -- 최종버전일
+	created_date timestamptz NULL, -- 생성일
+	modified_date timestamptz NULL, -- 수정일
+	creator varchar NULL, -- 생성자
+	modifier varchar NULL,
+	CONSTRAINT tb_standard_domain_pkey PRIMARY KEY (id)
+);
+
+-- Column comments
+
+COMMENT ON COLUMN public.tb_standard_domain.id IS '도메인 UUID';
+COMMENT ON COLUMN public.tb_standard_domain."name" IS '도메인 명';
+COMMENT ON COLUMN public.tb_standard_domain.group_name IS '도메인 그룹명';
+COMMENT ON COLUMN public.tb_standard_domain.domain_classified_name IS '도메인 분류명';
+COMMENT ON COLUMN public.tb_standard_domain.description IS '도메인 설명';
+COMMENT ON COLUMN public.tb_standard_domain.data_type IS '데이터 타입';
+COMMENT ON COLUMN public.tb_standard_domain.data_size IS '데이터 길이';
+COMMENT ON COLUMN public.tb_standard_domain.decimal_point_size IS '소수점 길이';
+COMMENT ON COLUMN public.tb_standard_domain.save_format IS '저장형식';
+COMMENT ON COLUMN public.tb_standard_domain.expression_format IS '표현형식';
+COMMENT ON COLUMN public.tb_standard_domain.unit IS '단위';
+COMMENT ON COLUMN public.tb_standard_domain.permission_value IS '허용값';
+COMMENT ON COLUMN public.tb_standard_domain.used IS '사용여부(Y,N)';
+COMMENT ON COLUMN public.tb_standard_domain.final_version_date IS '최종버전일';
+COMMENT ON COLUMN public.tb_standard_domain.created_date IS '생성일';
+COMMENT ON COLUMN public.tb_standard_domain.modified_date IS '수정일';
+COMMENT ON COLUMN public.tb_standard_domain.creator IS '생성자';
+
+-- Permissions
+
+ALTER TABLE public.tb_standard_domain OWNER TO data_catalog;
 
 
 -- tb_account
