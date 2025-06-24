@@ -45,6 +45,8 @@ RUN chmod 755 /entrypoint.sh
 
 USER postgres
 
+# bashrc 설정 추가
+RUN echo 'alias ll="ls -alF --color=auto"' >> /var/lib/pgsql/.bashrc
 
 #port
 EXPOSE 5432
