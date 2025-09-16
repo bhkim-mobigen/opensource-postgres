@@ -37,7 +37,9 @@ RUN usermod -aG sudo postgres && echo "postgres ALL=(ALL) NOPASSWD:ALL" >> /etc/
 RUN mkdir -p /defaultfile
 COPY pg_hba.conf /defaultfile
 COPY postgresql.conf /defaultfile
-COPY data_catalog_init.sql /defaultfile
+COPY init/data_catalog_init.sql /defaultfile
+COPY init/data_catalog_hive_metadata_init.sql /defaultfile
+COPY init/data_catalog_fusion_init.sql /defaultfile
 COPY entrypoint.sh /
 
 RUN chown -R postgres:postgres /defaultfile
