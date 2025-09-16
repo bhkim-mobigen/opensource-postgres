@@ -1,10 +1,10 @@
 version: '1'
 services:
-  postgres:
+  data-catalog-postgres:
     build:
       context: ../
       dockerfile: docker/Dockerfile
-    container_name: postgres
+    container_name: data-catalog-postgres
     image: data-catalog-postgres:$IMG_VERSION
     ports:
       - "5432:5432"
