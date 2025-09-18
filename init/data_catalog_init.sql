@@ -1,7 +1,3 @@
-CREATE USER data_catalog PASSWORD 'data_catalog123' SUPERUSER;
-CREATE DATABASE data_catalog ENCODING 'UTF8' LC_COLLATE = 'en_US.UTF-8' LC_CTYPE = 'en_US.UTF-8' TEMPLATE template0;
-CREATE DATABASE airflow;
-
 
 -- public.classification_id_seq definition
 
