@@ -1029,6 +1029,7 @@ CREATE TABLE public.tb_meta_system_info (
 	err_description varchar NULL, -- 시스템 오류 내용
 	"schema" varchar NULL, -- 시스템 schema
 	hive_thrift_port int4 NULL, -- hive 메타 서버 포트
+	"catalog" varchar NULL,
 	CONSTRAINT tb_meta_system_info_pk PRIMARY KEY (system_id)
 );
 COMMENT ON TABLE public.tb_meta_system_info IS '수집 시스템 정보 테이블';
@@ -1055,6 +1056,7 @@ COMMENT ON COLUMN public.tb_meta_system_info.status IS '시스템 상태';
 COMMENT ON COLUMN public.tb_meta_system_info.err_description IS '시스템 오류 내용';
 COMMENT ON COLUMN public.tb_meta_system_info."schema" IS '시스템 schema';
 COMMENT ON COLUMN public.tb_meta_system_info.hive_thrift_port IS 'hive 메타 서버 포트';
+COMMENT ON COLUMN public.tb_meta_system_info."catalog" IS 'trino 카탈로그 명';
 
 
 -- public.tb_portal_config definition
@@ -1345,6 +1347,7 @@ CREATE TABLE public.tb_profile_table (
 	raw_data_size int8 NULL, -- 데이터 크기
 	num_files int4 NULL, -- 데이터 파일 수 
 	err_description varchar NULL, -- 오류 내용
+	sample_data_url varchar NULL, -- 샘플 파일의 minio 경로
 	CONSTRAINT profile_table_pk PRIMARY KEY (meta_id)
 );
 COMMENT ON TABLE public.tb_profile_table IS '테이블 프로파일링';
@@ -1364,6 +1367,7 @@ COMMENT ON COLUMN public.tb_profile_table.num_rows IS 'row count';
 COMMENT ON COLUMN public.tb_profile_table.raw_data_size IS '데이터 크기';
 COMMENT ON COLUMN public.tb_profile_table.num_files IS '데이터 파일 수 ';
 COMMENT ON COLUMN public.tb_profile_table.err_description IS '오류 내용';
+COMMENT ON COLUMN public.tb_profile_table.sample_data_url IS '샘플 파일의 minio 경로';
 
 
 -- public.tb_recommend_meta definition
@@ -1878,6 +1882,39 @@ COMMENT ON COLUMN public.tb_standard_domain.created_date IS '생성일';
 COMMENT ON COLUMN public.tb_standard_domain.modified_date IS '수정일';
 COMMENT ON COLUMN public.tb_standard_domain.creator IS '생성자';
 
+
+-- public.tb_meta_system_status definition
+
+-- Drop table
+
+-- DROP TABLE public.tb_meta_system_status;
+
+CREATE TABLE public.tb_meta_system_status (
+	create_time timestamp DEFAULT now() NOT NULL,
+	system_id varchar NOT NULL,
+	system_type varchar NULL,
+	system_name varchar NULL,
+	connection_status int4 NULL,
+	response_time int8 NULL,
+	usage_cpu int8 NULL,
+	usage_memory numeric(10, 2) NULL,
+	query_success_count int4 NULL,
+	query_fail_count int4 NULL,
+	CONSTRAINT tb_meta_system_status_pk PRIMARY KEY (create_time, system_id)
+);
+COMMENT ON TABLE public.tb_meta_system_status IS '수집 시스템 모니터링 이력';
+
+COMMENT ON COLUMN public.tb_meta_system_status.create_time IS '모니터링 시간';
+COMMENT ON COLUMN public.tb_meta_system_status.system_id IS '시스템 ID';
+COMMENT ON COLUMN public.tb_meta_system_status.system_type IS '시스템 타입 (hive, hbase, postgreSQL 등 시스템 종류)';
+COMMENT ON COLUMN public.tb_meta_system_status.system_name IS '시스템 명 (수집대상 시스템명 또는 서비스명)';
+COMMENT ON COLUMN public.tb_meta_system_status.connection_status IS '연경상태 (1: 연경설공, 0: 연결실패)';
+COMMENT ON COLUMN public.tb_meta_system_status.response_time IS '응답속도 (ms)';
+COMMENT ON COLUMN public.tb_meta_system_status.usage_cpu IS 'CPU 사용량';
+COMMENT ON COLUMN public.tb_meta_system_status.usage_memory IS '매모리 사용량';
+COMMENT ON COLUMN public.tb_meta_system_status.query_success_count IS '성공 쿼리 수';
+COMMENT ON COLUMN public.tb_meta_system_status.query_fail_count IS 'NULL';
+
 -- Permissions
 
 ALTER TABLE public.tb_standard_domain OWNER TO data_catalog;
@@ -1886,7 +1923,7 @@ ALTER TABLE public.tb_standard_domain OWNER TO data_catalog;
 -- tb_account
 INSERT INTO public.tb_account
 (user_id, user_name, "password", user_type, email, create_time, last_login_time, menu_role, dept_id, group_id, login_fail_cnt, create_date)
-VALUES('admin', '관리자', '$2a$10$eAQ4FT0enRvFlAfvXq8viOeKf46OS6qlFva3Dn7gx4x8tkWWdg8lW', 0, 'mobigen_portal@mobigen.com', '2024-07-16 18:03:12.627', '2025-02-21 10:29:12.126', 'ROLE_ADMIN', 'INIT_DEPT', 1, 0, '2025-01-22 13:32:19.379');
+VALUES('admin', '관리자', '$2a$10$eAQ4FT0enRvFlAfvXq8viOeKf46OS6qlFva3Dn7gx4x8tkWWdg8lW', 0, 'mobigen_portal@mobigen.com', '2024-07-16 18:03:12.627', now(), 'ROLE_ADMIN', 'INIT_DEPT', 1, 0, '2025-01-22 13:32:19.379');
 
 -- tb_account_dept
 INSERT INTO public.tb_account_dept
