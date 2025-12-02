@@ -1,4 +1,3 @@
-
 -- public.classification_id_seq definition
 
 -- DROP SEQUENCE public.classification_id_seq;
@@ -1881,6 +1880,31 @@ COMMENT ON COLUMN public.tb_standard_domain.final_version_date IS '최종버전�
 COMMENT ON COLUMN public.tb_standard_domain.created_date IS '생성일';
 COMMENT ON COLUMN public.tb_standard_domain.modified_date IS '수정일';
 COMMENT ON COLUMN public.tb_standard_domain.creator IS '생성자';
+
+
+-- public.tb_meta_system_slow definition
+
+-- Drop table
+
+-- DROP TABLE public.tb_meta_system_slow;
+
+CREATE TABLE public.tb_meta_system_slow ( create_time timestamp DEFAULT now() NULL, system_id varchar NOT NULL, system_type varchar NULL, system_name varchar NULL, query_string varchar NULL, query_time int8 NULL, query_start_time timestamp NULL, query_end_time timestamp NULL);
+COMMENT ON TABLE public.tb_meta_system_slow IS '수집 시스템 슬로우 쿼리';
+
+-- Column comments
+
+COMMENT ON COLUMN public.tb_meta_system_slow.create_time IS '모니터링 시간';
+COMMENT ON COLUMN public.tb_meta_system_slow.system_id IS '시스템 ID';
+COMMENT ON COLUMN public.tb_meta_system_slow.system_type IS '시스템 타입 (hive, hbase, postgreSQL 등 시스템 종류)';
+COMMENT ON COLUMN public.tb_meta_system_slow.system_name IS '시스템 명 (수집대상 시스템명 또는 서비스명)';
+COMMENT ON COLUMN public.tb_meta_system_slow.query_string IS '슬로우 쿼리문';
+COMMENT ON COLUMN public.tb_meta_system_slow.query_time IS '쿼리 수행 시간';
+COMMENT ON COLUMN public.tb_meta_system_slow.query_start_time IS '쿼리 시작 시간';
+COMMENT ON COLUMN public.tb_meta_system_slow.query_end_time IS '쿼리 종료 시간';
+
+-- Permissions
+
+ALTER TABLE public.tb_meta_system_slow OWNER TO data_catalog;
 
 
 -- public.tb_meta_system_status definition
