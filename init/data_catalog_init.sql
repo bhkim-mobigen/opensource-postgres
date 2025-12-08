@@ -3411,43 +3411,8 @@ INSERT INTO public.tb_mail_templates (template_id, template_title, template_cont
 -- synonym
 
 INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('분석', 'analysis', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('비용', 'cost', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('비용', '원가', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('공장', 'factory', 'admin', NULL, NULL);
 INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('자동화', 'automation', 'admin', NULL, NULL);
 INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('자동화', '자동', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('공정', 'fair', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('무역', 'trade', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('능력', 'capability', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('능력', 'capa', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('관세', 'duty', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('관세', 'customs', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('구매자', 'buyer', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('기간', 'duration', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('도구', 'tool', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('범위', 'scope', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('산업', 'industrial', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('공학', 'engineering', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('서비스', 'service', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('성과', 'performance', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('소프트웨어', 'sw', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('소프트웨어', 'software', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('시스템', 'system', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('요구사항', 'requirement', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('확증', 'validation', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('네트워크', 'network', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('품질', 'quality', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('날짜', 'day', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('평균', 'mean', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('평균', 'average', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('수출', 'export', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('수입', 'import', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('신뢰도', 'reliability', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('보고서', 'report', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('적합성', 'Compatibility', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('인공지능', 'AI', 'admin', NULL, NULL);
-INSERT INTO public.tb_synonyms (term, synonym, create_user, update_date, update_user) VALUES('스키마', 'schema', 'admin', NULL, NULL);
-
 
 -- public.vw_account_master source
 
