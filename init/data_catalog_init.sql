@@ -3078,8 +3078,8 @@ INSERT INTO public.tb_code (parent_id, "level", "name", value, description, "typ
 INSERT INTO public.tb_code (parent_id, "level", "name", value, description, "type") VALUES(NULL, 'NULL', 'DATA_REQUEST_RESPONSE', 'TEMPLATE_03', '데이터 요청 답변 이메일 템플릿 ID', 'email_template');
 INSERT INTO public.tb_code (parent_id, "level", "name", value, description, "type") VALUES(NULL, 'NULL', 'SYNONYM_DELETE_REQUEST', 'TEMPLATE_04', '동의어 삭제 요청 등록 이메일 템플릿 ID', 'email_template');
 INSERT INTO public.tb_code (parent_id, "level", "name", value, description, "type") VALUES(NULL, 'NULL', 'SYNONYM_DELETE_RESPONSE', 'TEMPLATE_05', '동의어 삭제 요청 처리 결과 이메일 템플릿 ID', 'email_template');
-INSERT INTO public.tb_code (parent_id, "level", "name", value, description, "type") VALUES(NULL, 'NULL', 'Mssql', 'MSSQL', '수집 시스템 타입(MSSQL)', 'system_type');
-INSERT INTO public.tb_code (parent_id, "level", "name", value, description, "type") VALUES(NULL, 'NULL', 'Mysql', 'Mysql', '수집 시스템 타입(MySQL)', 'system_type');
+INSERT INTO public.tb_code (parent_id, "level", "name", value, description, "type") VALUES(NULL, 'NULL', 'Mssql', 'Mssql', '수집 시스템 타입(Mssql)', 'system_type');
+INSERT INTO public.tb_code (parent_id, "level", "name", value, description, "type") VALUES(NULL, 'NULL', 'Mysql', 'Mysql', '수집 시스템 타입(Mysql)', 'system_type');
 INSERT INTO public.tb_code (parent_id, "level", "name", value, description, "type") VALUES(NULL, 'NULL', 'MAIN_BANNER_SUBJECT1', 'MOBIGEN ', '메인화면 배너명1', 'portal_config');
 INSERT INTO public.tb_code (parent_id, "level", "name", value, description, "type") VALUES(NULL, 'NULL', 'MAIN_BANNER_SUBJECT2', 'DATA catalog WEB PORTAL', '메인화면 배너명2', 'portal_config');
 INSERT INTO public.tb_code (parent_id, "level", "name", value, description, "type") VALUES(NULL, 'NULL', 'FOOTER_CONTENT1', '(13453) 경기도 성남시 수정구 금토로80번길 37, W동 7, 8, 9층 (금토동, 인피니티타워)', '하단 설명1', 'portal_config');
